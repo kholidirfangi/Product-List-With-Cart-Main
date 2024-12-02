@@ -7,7 +7,6 @@ const CartList = ({ cartItems, setQuantity, setCartItems, isConfirmOrder }) => {
     }
     return 0;
   };
-  console.log(isConfirmOrder);
 
   // Hitung total harga item yang ada di keranjang
   const calculateTotal = () => {
