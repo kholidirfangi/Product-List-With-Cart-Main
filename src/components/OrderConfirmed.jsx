@@ -13,10 +13,10 @@ const OrderConfirmed = ({
     setQuantity({});
   };
   return (
-    <div className="fixed inset-0 bg-black bg-opacity-50 z-50">
-      <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white rounded-lg p-5 w-96 max-w-screen-sm">
+    <div className="fixed inset-0 bg-black bg-opacity-80 z-50">
+      <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white rounded-lg p-5 w-96 sm:w-1/3 max-w-screen-sm max-h-[90vh] overflow-y-auto">
         <img src="./assets/images/icon-order-confirmed.svg" alt="" />
-        <h1 className="text-4xl red-hat-text-extrabold text-rose-900 w-1/2 mt-5 mb-3">
+        <h1 className="text-4xl red-hat-text-extrabold text-rose-900 w-1/2 sm:w-full mt-5 mb-3">
           Order Confirmed
         </h1>
         <p className="text-rose-500 red-hat-text-bold">
