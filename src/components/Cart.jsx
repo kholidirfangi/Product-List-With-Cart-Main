@@ -1,7 +1,7 @@
 import CartList from './CartList';
 
 /* eslint-disable react/prop-types */
-const Cart = ({ cartItems, setQuantity, setCartItems, setIsConfirmOrder }) => {
+const Cart = ({ cartItems, setQuantity, setCartItems, isConfirmOrder, setIsConfirmOrder }) => {
   const totalQuantity = cartItems.reduce(
     (total, item) => total + item.quantity,
     0
@@ -32,6 +32,8 @@ const Cart = ({ cartItems, setQuantity, setCartItems, setIsConfirmOrder }) => {
             cartItems={cartItems}
             setQuantity={setQuantity}
             setCartItems={setCartItems}
+            isConfirmOrder={isConfirmOrder}
+            setIsConfirmOrder={setIsConfirmOrder}
           />
           <div className="flex justify-between bg-rose-100 rounded-md p-5 mt-8">
             <img src="./assets/images/icon-carbon-neutral.svg" alt="" />

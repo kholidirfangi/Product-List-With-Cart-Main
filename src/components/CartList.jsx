@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-const CartList = ({ cartItems, setQuantity, setCartItems }) => {
+const CartList = ({ cartItems, setQuantity, setCartItems, isConfirmOrder }) => {
   const calculateTotalPerItem = (itemId) => {
     const item = cartItems.find((item) => item.id === itemId);
     if (item) {
@@ -7,6 +7,7 @@ const CartList = ({ cartItems, setQuantity, setCartItems }) => {
     }
     return 0;
   };
+  console.log(isConfirmOrder);
 
   // Hitung total harga item yang ada di keranjang
   const calculateTotal = () => {
@@ -45,17 +46,25 @@ const CartList = ({ cartItems, setQuantity, setCartItems }) => {
               <div className="red-hat-text-regular text-rose-500 ">
                 @{item.price.toFixed(2)}
               </div>
-              <div className="text-rose-500 red-hat-text-bold">
-                ${calculateTotalPerItem(item.id).toFixed(2)}
-              </div>
+              {isConfirmOrder === false && (
+                <div className="text-rose-500 red-hat-text-bold">
+                  ${calculateTotalPerItem(item.id).toFixed(2)}
+                </div>
+              )}
             </div>
           </div>
-          <div
-            onClick={() => handleRemoveItem(item.id)}
-            className="border-2 border-rose-300 rounded-full p-1 cursor-pointer hover:bg-red"
-          >
-            <img src="./assets/images/icon-remove-item.svg" alt="" />
-          </div>
+          {isConfirmOrder === false ? (
+            <div
+              onClick={() => handleRemoveItem(item.id)}
+              className="border-2 border-rose-300 rounded-full p-1 cursor-pointer hover:bg-red"
+            >
+              <img src="./assets/images/icon-remove-item.svg" alt="" />
+            </div>
+          ) : (
+            <div className="text-rose-900 red-hat-text-bold">
+              ${calculateTotalPerItem(item.id).toFixed(2)}
+            </div>
+          )}
         </li>
       ))}
       <li className="flex justify-between items-center p-3">
@@ -68,4 +77,4 @@ const CartList = ({ cartItems, setQuantity, setCartItems }) => {
   );
 };
 
-export default CartList
+export default CartList;

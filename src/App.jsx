@@ -24,6 +24,7 @@ const App = () => {
         cartItems={cartItems}
         setCartItems={setCartItems}
         setQuantity={setQuantity}
+        isConfirmOrder={isConfirmOrder}
         setIsConfirmOrder={setIsConfirmOrder}
       />
       {isConfirmOrder && (
