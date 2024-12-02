@@ -52,18 +52,12 @@ const CartList = ({ cartItems, setQuantity, setCartItems, isConfirmOrder }) => {
               )}
             </div>
           </div>
-          {isConfirmOrder === false ? (
-            <div
-              onClick={() => handleRemoveItem(item.id)}
-              className="border-2 border-rose-300 rounded-full p-1 cursor-pointer hover:bg-red"
-            >
-              <img src="./assets/images/icon-remove-item.svg" alt="" />
-            </div>
-          ) : (
-            <div className="text-rose-900 red-hat-text-bold">
-              ${calculateTotalPerItem(item.id).toFixed(2)}
-            </div>
-          )}
+          <div
+            onClick={() => handleRemoveItem(item.id)}
+            className="border-2 border-rose-300 rounded-full p-1 cursor-pointer hover:bg-red"
+          >
+            <img src="./assets/images/icon-remove-item.svg" alt="" />
+          </div>
         </li>
       ))}
       <li className="flex justify-between items-center p-3">
